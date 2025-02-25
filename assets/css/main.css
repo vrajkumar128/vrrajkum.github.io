@@ -1,1 +1,172 @@
-.overlay{background-color:rgba(16,77,123,0.75)}.email-btn{color:white;padding:.75rem 2.5rem;border:2px solid white;margin-top:5rem;transition:all .1s}.email-btn:hover{background-color:white;color:rgba(16,77,123)}nav{transition:all .5s}.scrolled{background-color:white}.navLink{padding-left:10px;transition:all .15s}.navLink:not(.active):hover{color:#bababa}.brand-logo{opacity:0}.whiteBackground{background-color:white}.blackColor{color:black}.short{height:64px!important}.inlineBlock{display:inline-block}.boxShadow{box-shadow:0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2)}.about{box-shadow:none!important}.about.active{color:#bababa!important}.separator{height:3px;width:12.5rem;background-color:#ccc;margin:0 auto 2rem auto}#about span{font-size:4.2rem}#about h5{opacity:0}.fullyVisible{visibility:visible}.maxOpacity{opacity:100}.certificate img{max-width:100%;height:auto;display:block}main{position:relative;z-index:4;background-color:#f4f4f4;margin-bottom:443px}#bottom{position:fixed;bottom:0;width:100%}.nav-wrapper .container{display:flex}.fas{font-size:2rem;cursor:pointer;position:relative}.fa-chevron-left{left:-25px}.fa-chevron-right{right:-25px}.whiteBackground .navLink:hover{color:#104d7b!important}.separator{width:0}@keyframes expand{0%{width:0}100%{width:12.5rem}}.expand{-webkit-animation-name:expand;animation-name:expand}
+html,
+body {
+    height: auto;
+    /* Changes from 100% to auto to ensure it stretches with content */
+    min-height: 100%;
+    /* Ensures at least viewport height */
+    margin: 0;
+    padding: 0;
+    position: relative;
+    /* Crucial for absolute positioning context */
+    width: 100%;
+    overflow-x: hidden;
+    /* Prevents horizontal scrolling */
+}
+
+.overlay {
+    background-color: rgba(16, 77, 123, 0.75);
+}
+
+.email-btn {
+    color: white;
+    padding: .75rem 2.5rem;
+    border: 2px solid white;
+    margin-top: 5rem;
+    transition: all .1s;
+}
+
+.email-btn:hover {
+    background-color: white;
+    color: rgba(16, 77, 123);
+}
+
+nav {
+    transition: all .5s;
+}
+
+.scrolled {
+    background-color: white;
+}
+
+.navLink {
+    padding-left: 10px;
+    transition: all .15s;
+}
+
+.navLink:not(.active):hover {
+    color: #bababa;
+}
+
+.brand-logo {
+    opacity: 0;
+}
+
+.whiteBackground {
+    background-color: white;
+}
+
+.blackColor {
+    color: black;
+}
+
+.short {
+    height: 64px !important;
+}
+
+.inlineBlock {
+    display: inline-block;
+}
+
+.boxShadow {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.about {
+    box-shadow: none !important;
+}
+
+.about.active {
+    color: #bababa !important;
+}
+
+.separator {
+    height: 3px;
+    width: 12.5rem;
+    background-color: #ccc;
+    margin: 0 auto 2rem auto;
+}
+
+#about span {
+    font-size: 4.2rem;
+}
+
+#about h5 {
+    opacity: 0;
+}
+
+.fullyVisible {
+    visibility: visible;
+}
+
+.maxOpacity {
+    opacity: 100;
+}
+
+.certificate img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+main {
+    position: relative;
+    z-index: 4;
+    background-color: #f4f4f4;
+}
+
+#bottom {
+    position: absolute;
+    /* Positioned relative to the nearest positioned ancestor (body) */
+    bottom: 0;
+    /* Aligns to the bottom of the body */
+    left: 0;
+    right: 0;
+    z-index: 3;
+    /* Below main */
+    width: 100%;
+    /* Full width */
+    /* Padding for layout */
+    text-align: center;
+    /* Centers text */
+}
+
+.nav-wrapper .container {
+    display: flex;
+}
+
+.fas {
+    font-size: 2rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.fa-chevron-left {
+    left: -25px;
+}
+
+.fa-chevron-right {
+    right: -25px;
+}
+
+.whiteBackground .navLink:hover {
+    color: #104d7b !important;
+}
+
+.separator {
+    width: 0;
+}
+
+@keyframes expand {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 12.5rem;
+    }
+}
+
+.expand {
+    -webkit-animation-name: expand;
+    animation-name: expand;
+}
