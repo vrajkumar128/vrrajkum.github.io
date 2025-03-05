@@ -1,18 +1,3 @@
-html,
-body {
-    height: auto;
-    /* Changes from 100% to auto to ensure it stretches with content */
-    min-height: 100%;
-    /* Ensures at least viewport height */
-    margin: 0;
-    padding: 0;
-    position: relative;
-    /* Crucial for absolute positioning context */
-    width: 100%;
-    overflow-x: hidden;
-    /* Prevents horizontal scrolling */
-}
-
 .overlay {
     background-color: rgba(16, 77, 123, 0.75);
 }
@@ -115,19 +100,9 @@ main {
 }
 
 #bottom {
-    position: relative;
-    /* Positioned relative to the nearest positioned ancestor (body) */
+    position: sticky;
     bottom: 0;
-    /* Aligns to the bottom of the body */
-    left: 0;
-    right: 0;
-    z-index: 3;
-    /* Below main */
     width: 100%;
-    /* Full width */
-    /* Padding for layout */
-    text-align: center;
-    /* Centers text */
 }
 
 .nav-wrapper .container {
