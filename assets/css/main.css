@@ -131,6 +131,11 @@ main {
     width: 0;
 }
 
+/* Override default Materialize styles
+.fixed-action-btn:hover {
+    transform: translateY(-5%) !important;
+} */
+
 @keyframes expand {
     0% {
         width: 0;
