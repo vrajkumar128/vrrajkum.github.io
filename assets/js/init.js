@@ -1,7 +1,8 @@
 !(function (a) {
     a(function () {
         M.AutoInit(),
-            a(".scrollspy").scrollSpy({ activeClass: "active" }),
+            a(".scrollspy").not("#contact").scrollSpy({ activeClass: "active" }),
+
             a(".contact.navLink").click(function () {
                 return a("html, body").animate({ scrollTop: a(document).height() - a(window).height() }, 200), !1;
             }),
@@ -16,6 +17,24 @@
                 return s > t && o < i;
             });
         var o = a(".colored:first-child");
+
+        function handleScrollSpy() {
+            var scrollPosition = a(window).scrollTop() + a(window).height();
+            var docHeight = a(document).height();
+            var bottomThreshold = 1;
+            if (docHeight - scrollPosition <= bottomThreshold) {
+                if (!a(".contact.navLink").hasClass("active")) {
+                    a(".about.navLink, .portfolio.navLink, .skills.navLink").removeClass("active");
+                    a(".contact.navLink").addClass("active");
+                }
+            }
+            else if (a(".contact.navLink").hasClass("active")) {
+                a(".contact.navLink").removeClass("active");
+            }
+        }
+
+        a(window).on("scroll", handleScrollSpy);
+
         a(window).on("load resize scroll", function () {
             a(".about").hasClass("active")
                 ? (a("nav").removeClass("whiteBackground boxShadow short"),
@@ -31,16 +50,15 @@
                     a(".brand-logo").addClass("animated fadeInUp"),
                     a(".fixed-action-btn").hasClass("maxOpacity") || a(".fixed-action-btn").addClass("fullyVisible maxOpacity")),
                 a(window).scrollTop() + a(window).height() <= a(document).height() / 2 &&
-                ((a(".skills").hasClass("active") || a(".contact").hasClass("active")) && (a(".skills").removeClass("active"), a(".contact").removeClass("active")),
+                ((a(".skills").hasClass("active")) && a(".skills").removeClass("active"),
                     a(".about").hasClass("active") && a(window).scrollTop() >= 235 && a(".about").removeClass("active"),
                     a(window).scrollTop() < 235 && !a(".about").hasClass("active") && a(".about").addClass("active"),
                     a(".about").hasClass("active") && a(".portfolio").hasClass("active") && a(".portfolio").removeClass("active"),
-                    a(".about").hasClass("active") || a(".portfolio").hasClass("active") || a(".contact").hasClass("active") || a(".portfolio").addClass("active")),
+                    a(".about").hasClass("active") || a(".portfolio").hasClass("active") || a(".contact.navLink").hasClass("active") || a(".portfolio").addClass("active")),
                 a(window).scrollTop() + a(window).height() >= a(document).height() / 2 &&
-                (!a(".about").hasClass("active") && !a(".portfolio").hasClass("active") && !a(".contact").hasClass("active") && a(window).scrollTop() + a(window).height() >= a(document).height() / 2 && a(".skills").addClass("active"),
-                    a(".portfolio").hasClass("active") && a(".skills").hasClass("active") && a(".portfolio").removeClass("active"),
-                    a(window).scrollTop() + a(window).height() === a(document).height() && (a(".contact").addClass("active"), a(":not(.contact)").removeClass("active")),
-                    a(".contact").hasClass("active") && a(window).scrollTop() + a(window).height() !== a(document).height() && a(".contact").removeClass("active")),
+                (!a(".about").hasClass("active") && !a(".portfolio").hasClass("active") && !a(".contact.navLink").hasClass("active") && a(window).scrollTop() + a(window).height() >= a(document).height() / 2 && a(".skills").addClass("active"),
+                    a(".portfolio").hasClass("active") && a(".skills").hasClass("active") && a(".portfolio").removeClass("active")),
+
                 (a(".portfolio").hasClass("active") || a(window).scrollTop() >= a("#portfolio .separator").offset().top) && a("#portfolio .separator").addClass("animated expand"),
                 (a(".skills").hasClass("active") || a(window).scrollTop() >= a("#skills .separator").offset().top) && a("#skills .separator").addClass("animated expand"),
                 o.isInViewport() &&
@@ -51,6 +69,7 @@
                     }, 100 * o);
                 });
         }),
+
             a(".skills-slick").slick({ dots: !0, autoplay: !0, autoplaySpeed: 5000, prevArrow: '<i class="fas fa-chevron-left"></i>', nextArrow: '<i class="fas fa-chevron-right"></i>' }),
             a(".certificate img").magnify({ src: "https://i.postimg.cc/d0ngtc3j/lqi5ogcj-1.png" });
         var s = a(".gallery");
