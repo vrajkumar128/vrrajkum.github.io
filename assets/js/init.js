@@ -21,7 +21,7 @@
         function handleScrollSpy() {
             var scrollPosition = a(window).scrollTop() + a(window).height();
             var docHeight = a(document).height();
-            var bottomThreshold = 1;
+            var bottomThreshold = 0.5;
             if (docHeight - scrollPosition <= bottomThreshold) {
                 if (!a(".contact.navLink").hasClass("active")) {
                     a(".about.navLink, .portfolio.navLink, .skills.navLink").removeClass("active");
