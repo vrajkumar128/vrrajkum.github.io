@@ -150,3 +150,30 @@ main {
     -webkit-animation-name: expand;
     animation-name: expand;
 }
+
+.gallery-cover {
+    height: 200px;
+    overflow: hidden;
+}
+
+.gallery-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery-header {
+    height: 60px;
+}
+
+.gallery .gallery-expand.active .gallery-cover {
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+}
+
+.gallery .gallery-expand.active .gallery-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

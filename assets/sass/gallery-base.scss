@@ -164,12 +164,17 @@ nav {
   }
 
   position: relative;
+  display: block;
+  width: 100%;
 
   .gallery-item {
     // Resets
     .card {
       margin: 0;
     }
+    margin-bottom: 1.5rem;
+    height: auto;
+    display: block;
   }
 
   .gallery-horizontal {
@@ -240,6 +245,9 @@ nav {
       cursor: pointer;
       border-radius: 4px;
       box-shadow: 0 1px 4px rgba(0,0,0,.1);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
     }
   }
 
@@ -256,16 +264,18 @@ nav {
     overflow: hidden;
     display: block;
     width: 100%;
-    // min-height: 200px;
+    height: 200px;
     transform-origin: 0 0;
     transition: top .5s;
     z-index: 2;
 
-
     img {
       box-shadow: 0 0 1px 0 rgba(0,0,0,.1);
-      min-width: 100%;
-      width: auto;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      object-fit: cover;
       display: block;
       user-select: none;
     }
@@ -280,6 +290,9 @@ nav {
     padding: 20px;
     background-color: #fff;
     color: #444;
+    height: 60px;
+    display: flex;
+    align-items: center;
 
     h1, h2, h3, h4, h5 {
       margin-top: 0;
@@ -336,6 +349,12 @@ nav {
       transform: scale(0);
       transition: none;
     }
+  }
+  
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
   }
 }
 
@@ -479,6 +498,3 @@ nav {
     }
   }
 }
-
-
-
