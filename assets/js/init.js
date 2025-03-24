@@ -70,7 +70,32 @@
                 });
         }),
 
-            a(".skills-slick").slick({ dots: !0, autoplay: !0, autoplaySpeed: 5000, prevArrow: '<i class="fas fa-chevron-left"></i>', nextArrow: '<i class="fas fa-chevron-right"></i>' }),
+            a(".skills-slick").slick({
+                dots: !0,
+                autoplay: !0,
+                autoplaySpeed: 5000,
+                prevArrow: '<i class="fas fa-chevron-left"></i>',
+                nextArrow: '<i class="fas fa-chevron-right"></i>'
+            }),
+
+            a('.slider-for').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false,
+                fade: false,
+                autoplay: true,
+                autoplaySpeed: 5000,
+                asNavFor: '.slider-nav'
+            }),
+            a('.slider-nav').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                asNavFor: '.slider-for',
+                dots: true,
+                centerMode: true,
+                focusOnSelect: true
+            }),
+
             a(".certificate img").magnify({ src: "https://i.postimg.cc/d0ngtc3j/lqi5ogcj-1.png" });
         var s = a(".gallery");
         s.masonry({ itemSelector: ".gallery-filter", columnWidth: ".gallery-filter", transitionDuration: 0 }),
