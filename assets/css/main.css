@@ -273,9 +273,9 @@ main {
 }
 
 .slider-nav {
+    position: relative;
     margin-bottom: 60px;
     width: 100%;
-    position: relative;
 }
 
 .slider-nav .slick-list {
@@ -302,35 +302,32 @@ main {
     object-fit: contain;
 }
 
-.slider-nav .slick-prev {
-    left: -40px;
+.slider-nav .fa-chevron-left,
+.slider-nav .fa-chevron-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     z-index: 10;
 }
 
-.slider-nav .slick-next {
-    right: -40px;
-    z-index: 10;
+.slider-nav .fa-chevron-left {
+    left: -50px;
+}
+
+.slider-nav .fa-chevron-right {
+    right: -50px;
 }
 
 .slider-nav .fas {
     font-size: 2rem;
     cursor: pointer;
-    position: relative;
+    position: absolute;
     color: #000;
     opacity: 0.75;
-    transition: opacity 0.3s ease;
 }
 
 .slider-nav .fas:hover {
     opacity: 1;
-}
-
-.slider-nav .fa-chevron-left {
-    left: 0;
-}
-
-.slider-nav .fa-chevron-right {
-    right: 0;
 }
 
 .slick-dots {
