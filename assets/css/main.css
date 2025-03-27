@@ -356,3 +356,23 @@ main {
 .scrolled .sidenav-trigger i {
     color: black;
 }
+
+@media screen and (max-width: 768px) {
+
+    /* Position arrows for slider-for in mobile view */
+    .slider-for .fa-chevron-left,
+    .slider-for .fa-chevron-right {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+    }
+
+    .slider-for .fa-chevron-left {
+        left: -50px;
+    }
+
+    .slider-for .fa-chevron-right {
+        right: -50px;
+    }
+}

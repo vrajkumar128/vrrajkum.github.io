@@ -87,12 +87,18 @@
         function initializeSliders() {
             // Handle certificate sliders based on window width
             if (window.innerWidth > 768) {
-                // Check if sliders are already initialized
-                if (!a('.slider-for').hasClass('slick-initialized')) {
-                    // Show all items that might have been hidden
-                    a('.slider-for').children().show();
-                    a('.slider-nav').show();
+                // Show all items and nav slider first
+                a('.slider-for').children().show();
+                a('.slider-nav').show();
 
+                // Check if sliders are already initialized in mobile mode (without asNavFor)
+                if (a('.slider-for').hasClass('slick-initialized') && !a('.slider-for').slick('slickGetOption', 'asNavFor')) {
+                    // Destroy the mobile version first
+                    a('.slider-for').slick('unslick');
+                }
+
+                // Initialize with desktop settings if not already properly initialized
+                if (!a('.slider-for').hasClass('slick-initialized')) {
                     // Initialize main slider
                     a('.slider-for').slick({
                         slidesToShow: 1,
@@ -104,29 +110,34 @@
                         asNavFor: '.slider-nav'
                     });
 
-                    // Initialize navigation slider
-                    a('.slider-nav').slick({
-                        slidesToShow: 3,
-                        slidesToScroll: 1,
-                        asNavFor: '.slider-for',
-                        dots: true,
-                        centerMode: true,
-                        focusOnSelect: true,
-                        prevArrow: '<i class="fas fa-chevron-left"></i>',
-                        nextArrow: '<i class="fas fa-chevron-right"></i>'
-                    });
+                    // Initialize navigation slider if not already initialized
+                    if (!a('.slider-nav').hasClass('slick-initialized')) {
+                        a('.slider-nav').slick({
+                            slidesToShow: 3,
+                            slidesToScroll: 1,
+                            asNavFor: '.slider-for',
+                            dots: true,
+                            centerMode: true,
+                            focusOnSelect: true,
+                            prevArrow: '<i class="fas fa-chevron-left"></i>',
+                            nextArrow: '<i class="fas fa-chevron-right"></i>'
+                        });
+                    }
                 }
             } else {
                 // On mobile, handle sliders differently
-                a('.slider-nav').hide(); // Hide the nav slider
 
-                // If slider-for is already initialized in desktop mode, destroy it
+                // Check if slider-for is initialized with desktop settings (with asNavFor)
                 if (a('.slider-for').hasClass('slick-initialized') && a('.slider-for').slick('slickGetOption', 'asNavFor') === '.slider-nav') {
+                    // Destroy both sliders if they're in desktop mode
                     a('.slider-for').slick('unslick');
                     if (a('.slider-nav').hasClass('slick-initialized')) {
                         a('.slider-nav').slick('unslick');
                     }
                 }
+
+                // Hide the nav slider
+                a('.slider-nav').hide();
 
                 // Show all slider-for items (undo any prior hiding)
                 a('.slider-for').children().show();
