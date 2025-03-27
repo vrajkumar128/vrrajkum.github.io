@@ -167,7 +167,7 @@
         });
 
         // Other initializations
-        a(".certificate img").magnify({ src: "https://i.postimg.cc/d0ngtc3j/lqi5ogcj-1.png" });
+        // a(".certificate img").magnify({ src: "https://i.postimg.cc/d0ngtc3j/lqi5ogcj-1.png" });
 
         var s = a(".gallery");
         s.masonry({ itemSelector: ".gallery-filter", columnWidth: ".gallery-filter", transitionDuration: 0 });

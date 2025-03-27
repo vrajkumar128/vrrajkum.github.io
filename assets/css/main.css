@@ -353,13 +353,33 @@ main {
     transition: color 0.3s ease;
 }
 
-.scrolled .sidenav-trigger i {
-    color: black;
+.sidenav-trigger i:hover {
+    color: #bababa;
+}
+
+.short .sidenav-trigger i {
+    color: black !important;
+}
+
+.short .sidenav-trigger i:hover {
+    color: rgba(16, 77, 123) !important;
+}
+
+.sidenav .navLink {
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.sidenav .navLink:hover {
+    color: white;
+    background-color: rgba(16, 77, 123);
 }
 
 @media screen and (max-width: 768px) {
 
-    /* Position arrows for slider-for in mobile view */
+    .slider-for {
+        width: 100%;
+    }
+
     .slider-for .fa-chevron-left,
     .slider-for .fa-chevron-right {
         position: absolute;
@@ -369,10 +389,14 @@ main {
     }
 
     .slider-for .fa-chevron-left {
-        left: -50px;
+        left: -40px;
     }
 
     .slider-for .fa-chevron-right {
-        right: -50px;
+        right: -40px;
+    }
+
+    .fixed-action-btn {
+        display: none;
     }
 }
