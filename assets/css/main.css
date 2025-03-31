@@ -374,6 +374,23 @@ main {
     background-color: rgba(16, 77, 123);
 }
 
+footer a {
+    transition: color 0.2s ease;
+}
+
+footer a:hover {
+    color: rgba(16, 77, 123, 1);
+}
+
+footer a i {
+    transition: color 0.2s ease;
+}
+
+footer a i:hover {
+    color: rgba(16, 77, 123, 1);
+}
+
+
 @media screen and (max-width: 768px) {
 
     .slider-for {
